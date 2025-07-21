@@ -37,6 +37,11 @@ def main():
             if obj.does_collide(player):
                 print("Game over!")
                 sys.exit(0)
+
+            for shot in shots: 
+                if obj.does_collide(shot):
+                    obj.split()
+                    shot.kill()
         for object in drawable:
             object.draw(screen)
         pygame.display.flip()
